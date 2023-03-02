@@ -1,0 +1,54 @@
+/*_________________________________________________*/
+/*______all variables are stored in this file______*/
+/*_________________________________________________*/
+
+/*________________values for z-index_______________*/
+
+
+/*___________________________________________________*/
+/*__________________values color_____________________*/
+/*___________________________________________________*/
+$backgroundColor:#F1F4F9;
+$headerColor:#FFFFFF;
+$sideBarColor:#091336;
+$activeMenuElemColor:#4B5675;
+$bigBlueButtonColor:#005FF8;
+//elements colors
+
+//for states of the element (disabled,hover...)
+
+//loader colors
+
+//borders colors
+
+//side elements(sidebars or scrollbar, thumbs...)
+
+
+/*___________________________________________________*/
+/*__________________values size______________________*/
+/*___________________________________________________*/
+
+/*___elements___*/
+$sideBarWidth:240px;
+
+/*___containers___*/
+$pageContainer:1440px;
+
+
+/*___________________________________________________*/
+/*_______________________mixins______________________*/
+/*___________________________________________________*/
+@mixin height_width($height,$width){
+  height: $height;
+  width: $width;
+};
+@mixin fixed_left_top($left,$top){
+  position: fixed;
+  left: $left;
+  top: $top;
+};
+@mixin absolute_left_top($left,$top){
+  position: absolute;
+  left: $left;
+  top: $top;
+};

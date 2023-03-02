@@ -1,0 +1,14 @@
+@import "constant";
+
+
+.header{
+  background-color: $headerColor;
+  @include height_width(64px,100%);
+  padding-left: $sideBarWidth;
+  &__container{
+    margin: 0 auto;
+    background-color: black;
+    width: $pageContainer;
+    height: 100%;
+  }
+}

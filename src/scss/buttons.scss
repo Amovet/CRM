@@ -1,0 +1,15 @@
+@import "constant";
+
+.big-blue-button{
+  @include height_width(52px,100%);
+  background-color: $bigBlueButtonColor;
+  position: relative;
+  font-size: 16px;
+  color: white;
+  padding-right: 44px;
+  border-radius: 4px;
+  & img{
+    @include absolute_left_top(100%,14px);
+    margin-left: -44px;
+  }
+}
