@@ -12,4 +12,7 @@
     @include absolute_left_top(100%,14px);
     margin-left: -44px;
   }
+  &:hover{
+    background-color:#0024CB;
+  }
 }
