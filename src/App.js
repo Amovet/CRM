@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from "./componets/header/header";
 import SideBar from "./componets/side_bar/side_bar";
-// import {} from "./file_bundle";
+import Calls from "./componets/calls/calls";
 
 
 function App() {
@@ -9,6 +9,7 @@ function App() {
         <>
             <Header/>
             <SideBar/>
+            <Calls/>
         </>
     );
 }

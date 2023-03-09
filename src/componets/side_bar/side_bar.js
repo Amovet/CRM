@@ -18,7 +18,7 @@ import BigBlueButton from "../buttons/big_blue_button";
 
 function SideBar() {
     return (
-        <div className='side-bar'>
+        <section className='side-bar'>
             <div className="side-bar__logo-container">
                 <img src={LogoIco} className="side-bar__logo"/>
             </div>
@@ -38,7 +38,7 @@ function SideBar() {
                 <BigBlueButton name={'Добавить заказ'} img={button_plus}/>
                 <BigBlueButton name={'Оплата'} img={button_alert}/>
             </div>
-        </div>
+        </section>
     );
 }
 

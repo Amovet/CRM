@@ -1,0 +1,215 @@
+@import "constant";
+
+.calls {
+  @include height_width(100vh, 100%);
+  padding: $headerHeight 0 0 $sideBarWidth;
+  font-family: SF-Pro-Display-light;
+
+  &__container {
+    width: $pageContainer;
+    padding-top: 20px;
+    @extend %centered;
+  }
+
+  &__settings {
+    @extend %flex_a_center;
+    justify-content: flex-end;
+
+    & .date-picker {
+      margin-left: 48px;
+    }
+  }
+
+  &__sort-by {
+    @include height_width(48px, 100%);
+    @extend %flex_a_center;
+    margin-bottom: 7px;
+    justify-content: space-between;
+    color: $textSecondary;
+
+    &-call {
+      @include height_width(100%, 250px);
+      @extend %flex_a_center;
+
+      & input {
+        @include height_width(100%, 100%);
+        background-color: inherit;
+        color: inherit;
+      }
+
+      & img {
+        margin-right: 12px;
+      }
+    }
+
+    &-param {
+      @extend %flex_a_center;
+
+      & .params {
+        margin-left: 32px
+      }
+    }
+  }
+}
+
+.table {
+  background-color: white;
+  border-radius: 8px;
+  min-height: calc(100vh - 200px);
+  width: 100%;
+  box-shadow: 0px 4px 5px #E9EDF3;
+  color: $textSecondary;
+  font-family: SF-Pro-Display-light;
+  font-weight: 400;
+  font-size: 14px;
+
+  &__elem {
+    height: 60px;
+    position: relative;
+
+    &:hover {
+      background-color: $hoverTableElemColor;
+      cursor: pointer;
+
+      & .player {
+        display: flex;
+      }
+
+      & .elem-checkbox {
+        display: initial
+      }
+
+      & .table__call img {
+        display: initial
+      }
+    }
+
+  }
+
+  &__type {
+    width: 93px;
+    padding-left: 40px
+  }
+
+  &__time {
+    width: 89px;
+  }
+
+  &__staff {
+    width: 128px;
+
+    & img {
+      @include height_width(32px, 32px);
+      border-radius: 50%;
+    }
+  }
+
+  &__call {
+    width: 328px;
+    position: relative;
+
+    & .phone-ico {
+      position: absolute;
+      left: -24px;
+      height: 16px;
+      display: none;
+      @include absolute_center_with_height(16px)
+    }
+
+    & .call-from-site {
+      position: absolute;
+      left: -52px;
+      height: 16px;
+      @include absolute_center_with_height(16px)
+    }
+  }
+
+  &__from {
+    width: 214px;
+  }
+
+  &__rate {
+    width: 461px;
+
+    & span {
+      color: $error;
+    }
+  }
+
+  &__duration {
+    padding-right: 40px;
+    text-align: right;
+  }
+
+  &__empty {
+    @include absolute_center_with_width(250px);
+    top: 175px;
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    align-items: center;
+
+    &-img {
+      width: 100%;
+      margin-bottom: 25px;
+    }
+
+    &-text {
+      font-size: 25px;
+      text-align: center;
+    }
+  }
+}
+
+table {
+  @include height_width(100%, 100%);
+  border-collapse: collapse;
+  position: relative;
+}
+
+thead {
+  @include height_width(60px, 100%);
+
+}
+
+th {
+  text-align: left;
+}
+
+.with-border {
+  border-bottom: 1px solid $tableBorderColor;
+}
+
+.elem-checkbox {
+  @include absolute_center_with_height(16px);
+  @include height_width(16px, 16px);
+  left: 12px;
+  display: none;
+}
+
+.group-name {
+  height: 65px;
+  padding-left: 40px;
+  font-weight: 600;
+  position: relative;
+
+  &__count {
+    font-size: 12px;
+    color: $textSecondary;
+    padding-left: 4px;
+    margin-bottom: 8px;
+  }
+
+  &__name {
+    @extend %flex_a_center;
+    position: absolute;
+    width: 200px;
+    @include absolute_center_with_height(16px)
+  }
+}
+
+.person_name {
+  margin-bottom: 5px;
+}
+
+

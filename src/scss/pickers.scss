@@ -1,0 +1,141 @@
+@import "constant";
+
+
+.date-picker{
+  position: relative;
+  &__face{
+    height: 24px;
+    @extend %flex_a_center;
+  }
+  &__face-value{
+    @extend %flex_a_center;
+    padding: 0 12px;
+    color: $menuElementColor;
+    & img{
+      margin-right: 8px;
+      @extend %defaultColor;
+    }
+    &:hover{
+      cursor: pointer;
+      & img{
+        @extend %hoverColor;
+      }
+    }
+  }
+  &__menu{
+    position: absolute;
+    right: 0;
+    margin-top: 8px;
+  }
+}
+input[type="date"]{
+  background-color: inherit;
+}
+.picker-menu{
+  width: 204px;
+  background-color: white;
+  z-index: $popUpMenu;
+  border: 1px solid #EAF0FA;
+  box-shadow: 0px 0px 26px rgba(233, 237, 243, 0.8);
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  &__elem{
+    width: 100%;
+    padding: 12px 20px 12px 20px;
+    color: $textSecondary;
+    @extend %flex_a_center;
+    & img{margin-right: 8px}
+    &:hover{
+      background-color: $menuHoverColor;
+      cursor: pointer;
+      color:black;
+      font-weight: 500;
+    }
+    & .rate-btn__rate{display: none}
+    & .rate-btn__btn{margin-left: 0}
+    & .medium-rate-btn{padding-left: 0}
+    & .bad-rate-btn{padding-left: 0}
+  }
+}
+
+.select-custom-date{
+  flex-direction: column;
+  &__title{
+    margin-bottom: 5px;
+    color: black;
+    width: 100%;
+  }
+  &__date-container{
+    @extend %flex_a_center;
+    width: 100%;
+    justify-content: space-between;
+    & img{
+      @extend %defaultColor;
+      margin-bottom: 8px;
+    }
+    &:hover img{@extend %hoverColor;}
+  }
+  &__date{
+    width: 130px;
+    background-color: inherit;
+    font-size: 12px;
+    letter-spacing: 0.01em;
+    line-height: 28px;
+    color:$textSecondary
+  }
+}
+
+.arrow{
+  @extend %defaultColor;
+  padding: 7px 10px 7px 0;
+  &-right{
+    transform: rotate(0.5turn);
+    padding-left: 10px;
+  }
+  &:hover{
+    cursor: pointer;
+    @extend %hoverColor;
+  }
+}
+.params {
+  @extend %flex_a_center;
+  font-weight: 400;
+  font-size: 14px;
+  & img {margin-left: 12px;}
+  &__menu{
+    position: absolute;
+    right: 0;
+    margin-top: 8px;
+  }
+  &:hover{cursor: pointer}
+  &__name{
+    &:hover{color: $menuElementColor}
+  }
+}
+.params-picker{
+  position: relative;
+}
+.staff-elem{
+  padding: 8px 20px;
+  &__all{height: 48px;}
+}
+.new-client{position: relative}
+.info-dot{
+  @include height_width(8px, 8px);
+  @include absolute_center_with_height(8px);
+  right: 71px;
+  background-color: $infoDotColor;
+  border-radius: 50%;
+}
+.sort-close{
+  &:hover{
+    color: $buttonHover;
+    & .sort-close__ico{@extend %hoverColor}
+  }
+  &__ico{
+    @include height_width(9px, 9px);
+    @extend %defaultColor;
+
+  }
+}

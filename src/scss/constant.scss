@@ -1,58 +1,104 @@
 /*_________________________________________________*/
 /*______all variables are stored in this file______*/
 /*_________________________________________________*/
-
 /*________________values for z-index_______________*/
-
+$headerIndex: 10;
+$sideBarIndex: 11;
+$popUpMenu: 9;
 
 /*___________________________________________________*/
 /*__________________values color_____________________*/
 /*___________________________________________________*/
-$backgroundColor:#F1F4F9;
-$headerColor:#FFFFFF;
-$sideBarColor:#091336;
-$activeMenuElemColor:#4B5675;
-$bigBlueButtonColor:#005FF8;
-$headerTextColor:#899CB1;
-$headerNewCallColor:#28A879;
-$headerQualityColor:#FFD500;
-$headerСonversionColor:#EA1A4F;
-//elements colors
-
-//for states of the element (disabled,hover...)
-
-//loader colors
-
-//borders colors
-
-//side elements(sidebars or scrollbar, thumbs...)
-
+$backgroundColor: #F1F4F9;
+$headerColor: #FFFFFF;
+$sideBarColor: #091336;
+$activeMenuElemColor: #4B5675;
+$textSecondary: #5E7793;
+$menuHoverColor: #DEEAFE;
+$BlueButtonColor: #005FF8;
+$menuElementColor: #005FF8;
+$sliderCoverColor: #005FF8;
+$buttonHover: #0024CB;
+$headerTextColor: #899CB1;
+$hoverTableElemColor: #F8FAFD;
+$sliderColor: #ADBFDF;
+$mediumRateBtnColor: #D8E4FB;
+$badRateBtnColor: #FEE9EF;
+$tableBorderColor: #EAF0FA;
+$headerNewCallColor: #28A879;
+$rateGoodBtnColor: #DBF8EF;
+$headerQualityColor: #FFD500;
+$infoDotColor: #FFD500;
+$headerСonversionColor: #EA1A4F;
+$error: #ea0037;
 
 /*___________________________________________________*/
 /*__________________values size______________________*/
 /*___________________________________________________*/
 
 /*___elements___*/
-$sideBarWidth:240px;
+$sideBarWidth: 240px;
+$headerHeight: 64px;
 
 /*___containers___*/
-$pageContainer:1440px;
+$pageContainer: 1440px;
 
 
 /*___________________________________________________*/
 /*_______________________mixins______________________*/
 /*___________________________________________________*/
-@mixin height_width($height,$width){
+@mixin height_width($height,$width) {
   height: $height;
   width: $width;
-};
-@mixin fixed_left_top($left,$top){
+}
+
+
+@mixin fixed_left_top($left,$top) {
   position: fixed;
   left: $left;
   top: $top;
-};
-@mixin absolute_left_top($left,$top){
+}
+
+
+@mixin absolute_left_top($left,$top) {
   position: absolute;
   left: $left;
   top: $top;
-};
+}
+
+
+
+@mixin absolute_center_with_height($height) {
+  position: absolute;
+  top: 50%;
+  margin-top: - calc($height/2);
+}
+
+
+@mixin absolute_center_with_width($width) {
+  position: absolute;
+  left: 50%;
+  margin-left: - calc($width/2);
+}
+
+
+
+/*___________________________________________________*/
+/*_______________________pattern_____________________*/
+/*___________________________________________________*/
+%centered {
+  margin: 0 auto;
+}
+
+%flex_a_center {
+  display: flex;
+  align-items: center;
+}
+
+%defaultColor {
+  filter: opacity(0.35);
+}
+
+%hoverColor {
+  filter: opacity(1);
+}

@@ -1,56 +1,219 @@
 @import "constant";
 
 
-.header{
+.header {
   background-color: $headerColor;
-  @include height_width(64px,100%);
+  @include height_width($headerHeight, 100%);
+  @include fixed_left_top(0px, 0px);
   padding-left: $sideBarWidth;
-  &__container{
+  font-family: SF-Pro-Display-light;
+  z-index: $headerIndex;
+
+  &__container {
     margin: 0 auto;
-    width: $pageContainer;
-    height: 100%;
-    display: flex;
-    align-items: center;
+    @include height_width(100%, $pageContainer);
+    @extend %flex_a_center;
+    justify-content: space-between;
   }
-  &__date{
+
+  &__date-and-statistic {
+    @extend %flex_a_center;
+  }
+
+  &__user-and-search {
+    @extend %flex_a_center;
+  }
+
+  &__date {
     font-size: 15px;
     color: $headerTextColor;
     margin-right: 86px;
   }
-  &__statistic{
+
+  &__company {
+    @extend %flex_a_center;
+    margin: 0 40px 0 55px;
+
+    & div {
+      margin-right: 4px
+    }
+
+    &:hover {
+      cursor: pointer
+    }
+  }
+
+  &__profile {
+    @extend %flex_a_center;
+
+    &:hover {
+      cursor: pointer
+    }
+  }
+
+  &__profile-avatar {
+    margin-right: 4px;
+  }
+
+  &__profile-container {
+    position: relative;
+  }
+
+  &__statistic {
     font-size: 14px;
     text-align: center;
     font-weight: 400;
     line-height: 128%;
-    letter-spacing: 1px;
     margin-right: 56px;
   }
 }
 
-.range-input{
-  width: 156px;
-  border-radius: 12px;
-  -webkit-appearance: none !important;
-  height:6px;
-  &::-webkit-slider-thumb{
-    -webkit-appearance:none!important;
+.profile-pop-up {
+  position: absolute;
+  right: 0px;
+  margin-top: 8px;
+  background: #FFFFFF;
+  border: 1px solid #EAF0FA;
+  box-shadow: 4px 16px 50px rgba(129, 135, 163, 0.24);
+  border-radius: 4px;
+  width: 370px;
+  padding: 20px 0;
+
+  &__user-info {
+    border-bottom: 1px solid #EAF0FA;
+    padding: 0 32px;
+    position: relative;
+
+    & .dot {
+      margin: 0 8px
+    }
+  }
+
+  &__name {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 124%;
+    margin-bottom: 6px;
+  }
+
+  &__info {
+    @extend %flex_a_center;
+    line-height: 124%;
+    color: $textSecondary;
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+
+  &__contact {
+    padding-bottom: 16px;
+  }
+
+  &__logout {
+    position: absolute;
+    right: 32px;
+    top: 0;
+  }
+
+  &__phone {
+    margin-bottom: 8px
   }
 }
-.new-call{
-  background: -webkit-linear-gradient(left, $headerNewCallColor 0%,$headerNewCallColor 70%, #DEE6F5 70%);
-  &__title span{
+
+.profile-contact {
+  @extend %flex_a_center;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 124%;
+  color: $textSecondary;
+
+  & img {
+    margin-right: 10px;
+  }
+
+}
+
+.range-input {
+  @include height_width(6px, 156px);
+  border-radius: 12px;
+  -webkit-appearance: none !important;
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none !important;
+  }
+}
+
+.new-call {
+  background: -webkit-linear-gradient(left, $headerNewCallColor 0%, $headerNewCallColor 70%, #DEE6F5 70%);
+
+  &__title span {
     color: $headerNewCallColor;
   }
 }
-.quality{
-  background: -webkit-linear-gradient(left, $headerQualityColor 0%,$headerQualityColor 40%, #DEE6F5 40%);
-  &__title span{
+
+.quality {
+  background: -webkit-linear-gradient(left, $headerQualityColor 0%, $headerQualityColor 40%, #DEE6F5 40%);
+
+  &__title span {
     color: $headerQualityColor;
   }
 }
-.сonversion{
-  background: -webkit-linear-gradient(left, $headerСonversionColor 0%,$headerСonversionColor 67%, #DEE6F5 67%);
-  &__title span{
+
+.сonversion {
+  background: -webkit-linear-gradient(left, $headerСonversionColor 0%, $headerСonversionColor 67%, #DEE6F5 67%);
+
+  &__title span {
     color: $headerСonversionColor;
+  }
+}
+
+.expand {
+  &_open {
+    transform: rotate(0.5turn);
+    transition: transform 0.25s;
+  }
+
+  &_close {
+    transform: rotate(0turn);
+    transition: transform 0.25s;
+  }
+}
+
+.profile-staff {
+  font-weight: 400;
+  font-size: 15px;
+
+  &__title {
+    color: $textSecondary;
+    margin: 16px 0 8px 0;
+    padding-left: 32px;
+  }
+
+  &__elem {
+    height: 48px;
+    padding: 0 32px;
+    @extend %flex_a_center;
+    position: relative;
+    line-height: 156%;
+    color: $menuElementColor;
+
+    &:hover {
+      background-color: $menuHoverColor;
+      cursor: pointer;
+
+      & .profile-staff__select {
+        display: initial
+      }
+    }
+  }
+
+  &__ico {
+    margin-right: 12px;
+    @include height_width(32px, 32px);
+  }
+
+  &__select {
+    @include absolute_center_with_height(24px);
+    right: 32px;
+    display: none;
   }
 }

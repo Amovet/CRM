@@ -7,6 +7,7 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
+  z-index: $sideBarIndex;
   &__logo-container{position: relative;}
   &__logo{
     @include absolute_left_top(12px,20px);
@@ -24,9 +25,8 @@
 
   &__elem{
     @include height_width(52px,100%);
+    @extend %flex_a_center;
     color: white;
-    display: flex;
-    align-items: center;
     padding: 0 12px;
     position: relative;
     &:hover{

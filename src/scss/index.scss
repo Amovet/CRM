@@ -1,11 +1,31 @@
 @import "null_style";
 @import "header";
-@import "table";
 @import "side_bar";
 @import "constant";
 @import "buttons";
+@import "calls";
+@import "pickers";
+@import "player";
 
-body{
+body {
   background-color: $backgroundColor;
   font-family: SF-Pro-Display;
+}
+
+.selected {
+  color: $menuElementColor;
+}
+
+.error {
+  color: $error;
+}
+
+.view {
+  display: initial !important;
+}
+
+.dot {
+  @include height_width(4px, 4px);
+  background-color: $textSecondary;
+  border-radius: 50%;
 }

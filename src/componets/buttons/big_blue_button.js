@@ -1,6 +1,6 @@
 import React from 'react'
 
-function BigBlueButton({img,name}) {
+function BigBlueButton({img, name}) {
     return (
         <button className='big-blue-button'>
             <div className='big-blue-button__name'>

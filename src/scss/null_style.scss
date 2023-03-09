@@ -13,9 +13,16 @@ a,a:visited{text-decoration: none;}
 ul li{list-style: none;}
 h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: inherit;}
 
+
 @font-face {
   font-family: "SF-Pro-Display";
   src: local("SFProDisplay"),
   url("../fonts/SF Pro Display/SF-Pro-Display-Medium.otf") format("opentype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "SF-Pro-Display-light";
+  src: local("SFProDisplay"),
+  url("../fonts/SF Pro Display/SF-Pro-Display-Light.otf") format("opentype");
   font-weight: normal;
 }

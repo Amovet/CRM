@@ -1,18 +1,123 @@
 @import "constant";
 
-.big-blue-button{
-  @include height_width(52px,100%);
-  background-color: $bigBlueButtonColor;
+.big-blue-button {
+  @include height_width(52px, 100%);
+  background-color: $BlueButtonColor;
   position: relative;
   font-size: 16px;
   color: white;
   padding-right: 44px;
   border-radius: 4px;
-  & img{
-    @include absolute_left_top(100%,14px);
+
+  & img {
+    @include absolute_left_top(100%, 14px);
     margin-left: -44px;
   }
-  &:hover{
-    background-color:#0024CB;
+
+  &:hover {
+    background-color: $buttonHover;
+  }
+}
+
+.content-menu-button {
+  @include height_width(40px, initial);
+  padding: 0 46px 0 12px;
+  background-color: white;
+  position: relative;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 148%;
+  border-radius: 48px;
+
+  & img {
+    @include absolute_left_top(100%, 8px);
+    margin-left: -36px;
+  }
+
+  &:hover {
+    & img {
+      filter: brightness(0.80);
+    }
+  }
+
+  &:active {
+    & img {
+      filter: brightness(0.65);
+    }
+  }
+}
+
+.define-rate-btn {
+  @include height_width(40px, initial);
+  padding: 0 24px;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0);
+  border: 1px solid $BlueButtonColor;
+  color: $BlueButtonColor;
+  font-weight: 600;
+  margin-left: 15px;
+}
+
+.good-rate-btn {
+  & .rate-btn__rate div {
+    background: $headerNewCallColor
+  }
+
+  & .rate-btn__btn {
+    border: 1px solid $headerNewCallColor;
+    color: $headerNewCallColor;
+    background-color: $rateGoodBtnColor;
+  }
+}
+
+.medium-rate-btn {
+  padding-left: 10px;
+
+  & .rate-btn__rate div {
+    background: $mediumRateBtnColor
+  }
+
+  & .rate-btn__btn {
+    border: 1px solid $headerTextColor;
+    color: black;
+    background-color: $mediumRateBtnColor;
+  }
+}
+
+.bad-rate-btn {
+  padding-left: 20px;
+
+  & .rate-btn__rate div {
+    background: $error
+  }
+
+  & .rate-btn__btn {
+    border: 1px solid $error;
+    color: $error;
+    background-color: $badRateBtnColor;
+  }
+}
+
+.rate-btn {
+  font-weight: 600;
+  background-color: rgba(255, 255, 255, 0);
+  @extend %flex_a_center;
+
+  &__rate {
+    @extend %flex_a_center;
+
+    & div {
+      @include height_width(8px, 8px);
+      border-radius: 50%;
+      margin-left: 2px;
+    }
+  }
+
+  &__btn {
+    @include height_width(30px, 70px);
+    @extend %flex_a_center;
+    justify-content: center;
+    border-radius: 4px;
+    margin-left: 8px;
   }
 }

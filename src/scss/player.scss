@@ -1,0 +1,97 @@
+@import "constant";
+
+
+.player{
+  @include height_width( 48px,352px);
+  @include absolute_center_with_height(48px);
+  align-items: center;
+  display: none;
+  background-color: $tableBorderColor;
+  border-radius: 48px;
+  position: absolute;
+  right: 40px;
+  padding: 0 20px;
+  & input[type=range] {
+    --range-progress: 0;
+    height: 5px;
+    -webkit-appearance: none;
+    width: 164px;
+    border-radius: 8px;
+    margin-left: 8px;
+    background: $sliderColor;
+    transition: background 0.2s ease;
+    cursor: pointer;
+    position: relative;
+    &::before {
+      content: '';
+      height: 5px;
+      width: var(--range-progress);
+      background: $sliderCoverColor;
+      transition: background 0.2s ease;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      height: 8px;
+      width: 8px;
+      border: none;
+      visibility: hidden;
+      cursor: pointer;
+      position: relative;
+    }
+  }
+  & input[type="range"]::-moz-range-track {
+    height: 5px;
+    -webkit-appearance: none;
+    width: 164px;
+    border-radius: 8px;
+    margin-left: 8px;
+    background: $sliderColor;
+    transition: background 0.2s ease;
+    cursor: pointer;
+    &::before {
+      content: '';
+      height: 5px;
+      width: var(--range-progress);
+      background: $sliderCoverColor;
+      transition: background 0.2s ease;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      height: 8px;
+      width: 8px;
+      border: none;
+      visibility: hidden;
+      cursor: pointer;
+      position: relative;
+    }
+  }
+  &__play-btn{
+    @include height_width(24px,24px);
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    position: relative;
+    & .play{@include absolute_left_top(9px,7px)}
+    & .pause{@include absolute_left_top(8px,8px)}
+    &:hover{cursor: pointer;}
+  }
+  &__duration{margin-right: 12px}
+  &__download{
+    @extend %defaultColor;
+    margin-left: 12px;
+    margin-right: 22px;
+    &:hover{@extend %hoverColor}
+  }
+  &__exit{
+    @extend %defaultColor;
+    &:hover{@extend %hoverColor}
+  }
+}
+.isPlaying{
+  display: flex!important;
+}
