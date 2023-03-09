@@ -50,9 +50,6 @@ export const filterCall = (data, sortBy) => {
     if (sortBy.byStaff !== false) {
         newCallArr = newCallArr.filter(call => sortBy.byStaff == call.person_id)
     }
-    if (sortBy.byFrom !== false) {
-        newCallArr = newCallArr.filter(call => sortBy.byFrom == call.source)
-    }
     return newCallArr
 }
 
